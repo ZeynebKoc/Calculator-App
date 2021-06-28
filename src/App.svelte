@@ -1,6 +1,45 @@
 <script>
-	let display = '';
+	let display = document.getElementById('display');
+
+	const addDisplay = (num) => {
+		display += num;
+	} 
+	const resetDisplay = () => {
+		display = '';
+	}
+	const deleteNum = () => {
+		display = display.slice(0, -1);
+	}
+	const equal = () => {
+		var exp = display;
+		if (exp){
+			display=eval(display);
+		}
+		console.log(equal);
+	} 
+	
+	const changeTheme = () => {
+		switch(theme) {
+			case 'theme1':
+				document.getElementById("theme-blue").style;
+				break;
+			case 'theme2':
+				document.getElementById("theme-white").style;
+				break;
+			case 'theme3':
+				document.getElementById("theme-purple").style;
+				break;
+			default:
+				document.getElementById("theme-blue").style;
+				break;
+		}
+	}
+	
 </script>
+
+<link rel="stylesheet" type="text/css" id='theme-blue' href="./themes/theme1.css" />
+<link rel="stylesheet" type="text/css" id='theme-white' href="./themes/theme2.css" />
+<link rel="stylesheet" type="text/css" id='theme-purple' href="./themes/theme3.css" />
 
 <main>
 	<div class='header'>
@@ -11,349 +50,38 @@
 				<p class='theme-1'>1</p>
 				<p class='theme-2'>2</p>
 				<p class='theme-3'>3</p>
-				<div class='theme-box'>
-					<div class='theme-circle'></div>
-				</div>
+				<input type=range class="range" min=1 max=3 step="1" list="theme-range"/>
+				<datalist id="theme-range">
+					<option value='1' id="theme-blue" on:click={()=>changeTheme}></option>
+					<option value='2' id="theme-white" on:click={()=>changeTheme}></option>
+					<option value='3' id="theme-purple" on:click={()=>changeTheme}></option>
+				</datalist>
 			</div>
 		</div>
 	</div>
-
-	<div class='display'>
-		<input type='display' bind:value={display} >
-		<p></p>
+	<div class='display' >
+		<input type='text' bind:value={display}/>
 	</div>
-
 	<div class='keypad'>
 		<div class='container'>
-			<button class='btn'><p>7</p></button>
-			<button class='btn'><p>8</p></button>
-			<button class='btn'><p>9</p></button>
-			<button class='del'><p>DEL</p></button>
-			<button class='btn'><p>4</p></button>
-			<button class='btn'><p>5</p></button>
-			<button class='btn'><p>6</p></button>
-			<button class='btn'><p>+</p></button>
-			<button class='btn'><p>1</p></button>
-			<button class='btn'><p>2</p></button>
-			<button class='btn'><p>3</p></button>
-			<button class='btn'><p>-</p></button>
-			<button class='btn'><p>.</p></button>
-			<button class='btn'><p>0</p></button>
-			<button class='btn'><p>/</p></button>
-			<button class='btn'><p>*</p></button>
-			<button class='reset'><p>RESET</p></button>
-			<button class='equal'><p>=</p></button>
+			<button class='btn' value='7' on:click={()=>{addDisplay(7)}}><p>7</p></button>
+			<button class='btn' value='8'on:click={()=>{addDisplay(8)}}><p>8</p></button>
+			<button class='btn' value='9' on:click={()=>{addDisplay(9)}}><p>9</p></button>
+			<button class='del' value='DEL' on:click={()=>{deleteNum()}}><p>DEL</p></button>
+			<button class='btn' value='4' on:click={()=>{addDisplay(4)}}><p>4</p></button>
+			<button class='btn' value='5' on:click={()=>{addDisplay(5)}}><p>5</p></button>
+			<button class='btn' value='6' on:click={()=>{addDisplay(6)}}><p>6</p></button>
+			<button class='btn' value='+' on:click={()=>{addDisplay('+')}}><p>+</p></button>
+			<button class='btn' value='1' on:click={()=>{addDisplay(1)}}><p>1</p></button>
+			<button class='btn' value='2' on:click={()=>{addDisplay(2)}}><p>2</p></button>
+			<button class='btn' value='3' on:click={()=>{addDisplay(3)}}><p>3</p></button>
+			<button class='btn' value='-' on:click={()=>{addDisplay('-')}}><p>-</p></button>
+			<button class='btn' value='.' on:click={()=>{addDisplay('.')}}><p>.</p></button>
+			<button class='btn' value='0' on:click={()=>{addDisplay(0)}}><p>0</p></button>
+			<button class='btn' value='/' on:click={()=>{addDisplay('/')}}><p>/</p></button>
+			<button class='btn' value='*' on:click={()=>{addDisplay('*')}}><p>&times</p></button>
+			<button class='reset' value='RESET' on:click={()=>{resetDisplay()}}><p>RESET</p></button>
+			<button class='equal' value='=' on:click={()=>{equal('=')}}><p>=</p></button>
 		</div>
 	</div>
 </main>
-
-<style>
-	main {
-		width: 1440px;
-		height: 900px;
-		background: #3A4663;
-	}
-	.header {
-		position: relative;
-		display: flex;
-		flex-direction: row;
-		width: 540px;
-		height: 44px;
-		left: 450px;
-		top: 96px;
-	}
-	h1 {
-		height: 36px;
-		width: 67px;
-		left: 0px;
-		top: 8px;
-
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 32px;
-		line-height: 36px;
-		text-align: center;
-		letter-spacing: -0.533333px;
-		color: #FFFFFF;
-	}
-	.nav {
-		position: relative;
-		display: flex;
-		flex-direction: row;
-		height: 44px;
-		width: 144px;
-		left: 396px;
-		top: 0px;
-	}
-	h2 {
-		position: relative;
-		height: 13px;
-		width: 51px;
-		left: -80px;
-		top: 24px;
-
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 13px;
-		text-align: center;
-		letter-spacing: 1px;
-		color: #FFFFFF;
-	}
-	.change-theme {
-		position: relative;
-		display: flex;
-		flex-direction: row;
-		height: 44px;
-		width: 71px;
-		left: -52px;
-		top: 0px;
-	}
-	.theme-box {
-		position: absolute;
-		height: 26px;
-		width: 71px;
-		left: 0px;
-		top: 26px;
-		border-radius: 13px;
-		background: #242D44;
-		border-radius: 13px;
-	}
-	.theme-circle {
-		position: relative;
-		height: 16px;
-		width: 16px;
-		left: 5px;
-		top: 5px;
-		border-radius: 10px;
-		background: #D03F2F;
-		cursor: pointer;
-	}
-	.theme-circle:hover {
-		background: #F96B5B;
-	}
-	.theme-1 {
-		position: relative;
-		height: 13px;
-		width: 12px;
-		left: 7px;
-		top: 0px;
-
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 13px;
-		text-align: center;
-		color: #FFFFFF;
-	}
-	.theme-2 {
-		position: relative;
-		height: 13px;
-		width: 12px;
-		left: 17px;
-		top: 0px;
-
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 13px;
-		text-align: center;
-		color: #FFFFFF;
-	}
-	.theme-3 {
-		position: relative;
-		height: 13px;
-		width: 12px;
-		left: 29px;
-		top: 0px;
-
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 13px;
-		text-align: center;
-		color: #FFFFFF;
-	}
-	.display {
-		position: absolute;
-		width: 540px;
-		height: 128px;
-		left: 450px;
-		top: 172px;
-		background: #181F33;
-		border-radius: 10px;
-	}
-	input {
-		width: 540px;
-		height: 128px;
-		left: 450px;
-		top: 172px;
-		background: #181F33;
-		border-radius: 10px;
-	}
-	input p {
-		position: absolute;
-		height: 54px;
-		width: 201px;
-		left: 307px;
-		top: 38px;
-
-		font-family: Spartan;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 48px;
-		line-height: 54px;
-
-		text-align: right;
-		letter-spacing: -0.8px;
-		color: #FFFFFF;
-	}
-	.keypad {
-		position: absolute;
-		width: 540px;
-		height: 480px;
-		left: 450px;
-		top: 324px;
-		background: #242D44;
-		border-radius: 10px;
-	}
-	.container {
-		position: relative;
-		display: grid;
-        grid-template-columns: repeat(4, 101px);
-        grid-template-rows: repeat(5, 64px);
-		grid-gap: 25px 25px;
-		left: 32px;
-		top: 32px;
-	}
-	.reset {
-		grid-column-start: 1;
-		grid-column-end: 3;
-		grid-column: 1 / 3;
-
-		background: #647198;
-		box-shadow: inset 0px -4px 0px #414E73;
-		border-radius: 10px;
-		cursor: pointer;
-	}
-	.reset:hover {
-		background: #A2B2E1;
-		box-shadow: inset 0px -4px 0px #414E73;
-		border-radius: 10px;
-	}
-	.reset p {
-		position: relative;
-		height: 40px;
-		width: 166px;
-		left: 75px;
-		top: -10px;
-		
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		line-height: 22px;
-		display: flex;
-		align-items: center;
-		text-align: center;
-		letter-spacing: -0.333333px;
-		color: #FFFFFF;
-	}
-	.equal {
-		grid-column-start: 3;
-		grid-column-end: 5;
-		grid-column: 3 / 5;
-
-		background: #D03F2F;
-		box-shadow: inset 0px -4px 0px #93261A;
-		border-radius: 10px;
-		cursor: pointer;
-	}
-	.equal:hover {
-		background: #F96B5B;
-		box-shadow: inset 0px -4px 0px #93261A;
-		border-radius: 10px;
-	}
-	.equal p {
-		position: relative;
-		height: 40px;
-		width: 166px;
-		left: 100px;
-		top: -10px;
-		
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		line-height: 22px;
-		display: flex;
-		align-items: center;
-		text-align: center;
-		letter-spacing: -0.333333px;
-		color: #FFFFFF;
-	}
-	.btn {
-		background: #EAE3DC;
-		box-shadow: inset 0px -4px 0px #B3A497;
-		border-radius: 10px;
-		cursor: pointer;
-	}
-	.btn:hover {
-		background: #FFFFFE;
-		box-shadow: inset 0px -4px 0px #B3A497;
-		border-radius: 10px;
-	}
-	.btn p {
-		position: relative;
-		height: 40px;
-		width: 74px;
-		left: 35px;
-		top: -20px;
-		
-		height: 40px;
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 32px;
-		line-height: 36px;
-		display: flex;
-		align-items: center;
-		text-align: center;
-		letter-spacing: -0.533333px;
-		color: #434A59;
-	}
-	.del {
-		background: #647198;
-		box-shadow: inset 0px -4px 0px #414E73;
-		border-radius: 10px;
-		cursor: pointer;
-	}
-	.del:hover {
-		background: #A2B2E1;
-		box-shadow: inset 0px -4px 0px #414E73;
-		border-radius: 10px;
-	}
-	.del p {
-		position: relative;
-		height: 40px;
-		width: 74px;
-		left: 25px;
-		top: -10px;
-		
-		font-family: 'Spartan', sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		line-height: 22px;
-		display: flex;
-		align-items: center;
-		text-align: center;
-		letter-spacing: -0.333333px;
-		color: #FFFFFF;
-	}
-</style>

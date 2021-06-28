@@ -1,8 +1,8 @@
-<style>
+
 	main {
 		width: 1440px;
 		height: 900px;
-		background: #3A4663;
+		background: rgba(23, 6, 42, 1);
 	}
 	.header {
 		position: relative;
@@ -11,11 +11,9 @@
 		width: 540px;
 		height: 44px;
 		left: 450px;
-		top: 96px;
+		top: 81px;
 	}
 	h1 {
-		height: 36px;
-		width: 67px;
 		left: 0px;
 		top: 8px;
 
@@ -23,10 +21,10 @@
 		font-style: normal;
 		font-weight: bold;
 		font-size: 32px;
-		line-height: 36px;
+		line-height: 35,84px;
 		text-align: center;
 		letter-spacing: -0.533333px;
-		color: #FFFFFF;
+		color: rgba(255, 229, 61, 1);
 	}
 	.nav {
 		position: relative;
@@ -39,10 +37,8 @@
 	}
 	h2 {
 		position: relative;
-		height: 13px;
-		width: 51px;
 		left: -80px;
-		top: 24px;
+		top: 33px;
 
 		font-family: 'Spartan', sans-serif;
 		font-style: normal;
@@ -51,7 +47,30 @@
 		line-height: 13px;
 		text-align: center;
 		letter-spacing: 1px;
-		color: #FFFFFF;
+		color: #FFE53D;
+	}
+	.range {
+		position: absolute;
+		width: 71px;
+		height: 26px;
+		-webkit-appearance: none;
+		border-radius: 13px;
+		background: #1E0936; 
+		padding-left: 5px;
+		padding-right: 5px;
+		left: 0px;
+		top: 26px;
+	}
+	.range::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background: #00DED0;
+		cursor: pointer;
+	}
+	.range::-webkit-slider-thumb:hover {
+		background: #93FFF8;
 	}
 	.change-theme {
 		position: relative;
@@ -60,30 +79,7 @@
 		height: 44px;
 		width: 71px;
 		left: -52px;
-		top: 0px;
-	}
-	.theme-box {
-		position: absolute;
-		height: 26px;
-		width: 71px;
-		left: 0px;
-		top: 26px;
-		border-radius: 13px;
-		background: #242D44;
-		border-radius: 13px;
-	}
-	.theme-circle {
-		position: relative;
-		height: 16px;
-		width: 16px;
-		left: 5px;
 		top: 5px;
-		border-radius: 10px;
-		background: #D03F2F;
-		cursor: pointer;
-	}
-	.theme-circle:hover {
-		background: #F96B5B;
 	}
 	.theme-1 {
 		position: relative;
@@ -98,7 +94,7 @@
 		font-size: 12px;
 		line-height: 13px;
 		text-align: center;
-		color: #FFFFFF;
+		color: #FFE53D;
 	}
 	.theme-2 {
 		position: relative;
@@ -113,7 +109,7 @@
 		font-size: 12px;
 		line-height: 13px;
 		text-align: center;
-		color: #FFFFFF;
+		color: #FFE53D;
 	}
 	.theme-3 {
 		position: relative;
@@ -128,16 +124,27 @@
 		font-size: 12px;
 		line-height: 13px;
 		text-align: center;
-		color: #FFFFFF;
+		color: #FFE53D;
 	}
-	.display {
+	input[type=text] {
 		position: absolute;
 		width: 540px;
 		height: 128px;
 		left: 450px;
 		top: 172px;
-		background: #181F33;
+		background: #1E0936;
 		border-radius: 10px;
+
+		font-family: 'Spartan', sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 48px;
+		line-height: 54px;
+		padding-right: 32px;
+
+		text-align: right;
+		letter-spacing: -0.8px;
+		color: #FFFFFF;
 	}
 	.keypad {
 		position: absolute;
@@ -145,7 +152,7 @@
 		height: 480px;
 		left: 450px;
 		top: 324px;
-		background: #242D44;
+		background: #1E0936;
 		border-radius: 10px;
 	}
 	.container {
@@ -153,7 +160,7 @@
 		display: grid;
         grid-template-columns: repeat(4, 101px);
         grid-template-rows: repeat(5, 64px);
-		grid-gap: 25px 25px;
+		grid-gap: 24px 25px;
 		left: 32px;
 		top: 32px;
 	}
@@ -162,23 +169,21 @@
 		grid-column-end: 3;
 		grid-column: 1 / 3;
 
-		background: #647198;
-		box-shadow: inset 0px -4px 0px #414E73;
+		background: #56077C;
+		box-shadow: inset 0px -4px 0px #BE15F4;
 		border-radius: 10px;
 		cursor: pointer;
 	}
 	.reset:hover {
-		background: #A2B2E1;
-		box-shadow: inset 0px -4px 0px #414E73;
+		background: #8631AF;
+		box-shadow: inset 0px -4px 0px #BE15F4;
 		border-radius: 10px;
 	}
 	.reset p {
 		position: relative;
-		height: 40px;
-		width: 166px;
 		left: 75px;
-		top: -10px;
-		
+		top: 1px;
+
 		font-family: 'Spartan', sans-serif;
 		font-style: normal;
 		font-weight: bold;
@@ -195,23 +200,20 @@
 		grid-column-end: 5;
 		grid-column: 3 / 5;
 
-		background: #D03F2F;
-		box-shadow: inset 0px -4px 0px #93261A;
+		background: #00DED0;
+		box-shadow: inset 0px -4px 0px #6CF9F1;
 		border-radius: 10px;
-		cursor: pointer;
 	}
 	.equal:hover {
-		background: #F96B5B;
-		box-shadow: inset 0px -4px 0px #93261A;
+		background: #93FFF8;
+		box-shadow: inset 0px -4px 0px #6CF9F1;
 		border-radius: 10px;
 	}
 	.equal p {
 		position: relative;
-		height: 40px;
-		width: 166px;
 		left: 100px;
-		top: -10px;
-		
+		top: 1px;
+
 		font-family: 'Spartan', sans-serif;
 		font-style: normal;
 		font-weight: bold;
@@ -221,27 +223,24 @@
 		align-items: center;
 		text-align: center;
 		letter-spacing: -0.333333px;
-		color: #FFFFFF;
+		color: #1A2327;
 	}
 	.btn {
-		background: #EAE3DC;
-		box-shadow: inset 0px -4px 0px #B3A497;
+		background: #331C4D;
+		box-shadow: inset 0px -4px 0px #881C9E;
 		border-radius: 10px;
 		cursor: pointer;
 	}
 	.btn:hover {
-		background: #FFFFFE;
-		box-shadow: inset 0px -4px 0px #B3A497;
+		background: #6C34AC;
+		box-shadow: inset 0px -4px 0px #881C9E;
 		border-radius: 10px;
 	}
 	.btn p {
 		position: relative;
-		height: 40px;
-		width: 74px;
-		left: 35px;
+		left: 33px;
 		top: -20px;
-		
-		height: 40px;
+
 		font-family: 'Spartan', sans-serif;
 		font-style: normal;
 		font-weight: bold;
@@ -251,26 +250,24 @@
 		align-items: center;
 		text-align: center;
 		letter-spacing: -0.533333px;
-		color: #434A59;
+		color: #FFE53D;
 	}
 	.del {
-		background: #647198;
-		box-shadow: inset 0px -4px 0px #414E73;
+		background: #56077C;
+		box-shadow: inset 0px -4px 0px #BE15F4;
 		border-radius: 10px;
 		cursor: pointer;
 	}
 	.del:hover {
-		background: #A2B2E1;
-		box-shadow: inset 0px -4px 0px #414E73;
+		background: #8631AF;
+		box-shadow: inset 0px -4px 0px #BE15F4;
 		border-radius: 10px;
 	}
 	.del p {
 		position: relative;
-		height: 40px;
-		width: 74px;
 		left: 25px;
-		top: -10px;
-		
+		top: 0px;
+
 		font-family: 'Spartan', sans-serif;
 		font-style: normal;
 		font-weight: bold;
@@ -282,4 +279,3 @@
 		letter-spacing: -0.333333px;
 		color: #FFFFFF;
 	}
-</style>
