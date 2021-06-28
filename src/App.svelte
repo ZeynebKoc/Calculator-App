@@ -1,7 +1,11 @@
 <script>
 	let display = 0;
+	let result = 0;
 
 	const addDisplay = (num) => {
+		if(display == 0){
+			display='';
+		}
 		display += String(num);
 	} 
 	const resetDisplay = () => {
@@ -15,16 +19,47 @@
 		if (exp){
 			display=eval(display);
 		}
-		console.log(equal);
-	} 
-
+	}
+	const operationEqual = ()=> {
+		if('+' || '-' || '/' || '*') {
+			equal();
+		}
+	}
+	const operationsState = (operation) => {
+		switch (operation) {
+			case '+':
+				operationEqual();
+				addDisplay('+');
+				result = display + parseFloat(display);
+				break;
+			case '-':
+				operationEqual();
+				addDisplay('-');
+				result = display - parseFloat(display);
+				break;
+			case '/':
+				operationEqual();
+				addDisplay('/');
+				result = display / parseFloat(display);
+				break;
+			case '*':
+				operationEqual();
+				addDisplay('*');
+				result = display * parseFloat(display);
+				break;
+			default:
+				operationEqual();
+				addDisplay();
+				display = parseFloat(display);
+				break;
+		}
+	}
+	//switch theme
 	const changeTheme = (e) => {
-		var oldlink = document.getElementsByTagName("link")[0];
+		let oldlink = document.getElementsByTagName("link")[0];
 		oldlink.setAttribute("href", `./themes/theme${e.target.value}.css`);
 	}
-
 </script>
-
 
 <main>
 	<div class='header'>
@@ -51,15 +86,15 @@
 			<button class='btn' value='4' on:click={()=>{addDisplay(4)}}><p>4</p></button>
 			<button class='btn' value='5' on:click={()=>{addDisplay(5)}}><p>5</p></button>
 			<button class='btn' value='6' on:click={()=>{addDisplay(6)}}><p>6</p></button>
-			<button class='btn' value='+' on:click={()=>{addDisplay('+')}}><p>+</p></button>
+			<button class='btn' value='+' on:click={()=>{operationsState('+')}}><p>+</p></button>
 			<button class='btn' value='1' on:click={()=>{addDisplay(1)}}><p>1</p></button>
 			<button class='btn' value='2' on:click={()=>{addDisplay(2)}}><p>2</p></button>
 			<button class='btn' value='3' on:click={()=>{addDisplay(3)}}><p>3</p></button>
-			<button class='btn' value='-' on:click={()=>{addDisplay('-')}}><p>-</p></button>
+			<button class='btn' value='-' on:click={()=>{operationsState('-')}}><p>-</p></button>
 			<button class='btn' value='.' on:click={()=>{addDisplay('.')}}><p>.</p></button>
 			<button class='btn' value='0' on:click={()=>{addDisplay(0)}}><p>0</p></button>
-			<button class='btn' value='/' on:click={()=>{addDisplay('/')}}><p>/</p></button>
-			<button class='btn' value='*' on:click={()=>{addDisplay('*')}}><p>&times</p></button>
+			<button class='btn' value='/' on:click={()=>{operationsState('/')}}><p>/</p></button>
+			<button class='btn' value='*' on:click={()=>{operationsState('*')}}><p>&times</p></button>
 			<button class='reset' value='RESET' on:click={()=>{resetDisplay()}}><p>RESET</p></button>
 			<button class='equal' value='=' on:click={()=>{equal('=')}}><p>=</p></button>
 		</div>
