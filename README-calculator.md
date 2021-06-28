@@ -1,7 +1,7 @@
 ### Screenshot
-![](./public/screenshots/screenshot1.png)
-![](./public/screenshots/screenshot2.png)
-![](./public/screenshots/screenshot3.png)
+![](./public/screenshots/theme-blue.png)
+![](./public/screenshots/theme-white.png)
+![](./public/screenshots/theme-purple.png)
 
 
 ### Links

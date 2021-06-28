@@ -5,6 +5,10 @@ html, body {
 	margin: 0;
 	padding: 0;
 	vertical-align: baseline;
+	-webkit-line-clamp: inherit;
+-webkit-line-clamp: initial;
+-webkit-line-clamp: unset;
+	
 }
 input, button {
 	box-sizing: border-box;

@@ -1,8 +1,8 @@
 <script>
-	let display = document.getElementById('display');
+	let display = 0;
 
 	const addDisplay = (num) => {
-		display += num;
+		display += String(num);
 	} 
 	const resetDisplay = () => {
 		display = '';
@@ -17,29 +17,14 @@
 		}
 		console.log(equal);
 	} 
-	
-	const changeTheme = () => {
-		switch(theme) {
-			case 'theme1':
-				document.getElementById("theme-blue").style;
-				break;
-			case 'theme2':
-				document.getElementById("theme-white").style;
-				break;
-			case 'theme3':
-				document.getElementById("theme-purple").style;
-				break;
-			default:
-				document.getElementById("theme-blue").style;
-				break;
-		}
+
+	const changeTheme = (e) => {
+		var oldlink = document.getElementsByTagName("link")[0];
+		oldlink.setAttribute("href", `./themes/theme${e.target.value}.css`);
 	}
-	
+
 </script>
 
-<link rel="stylesheet" type="text/css" id='theme-blue' href="./themes/theme1.css" />
-<link rel="stylesheet" type="text/css" id='theme-white' href="./themes/theme2.css" />
-<link rel="stylesheet" type="text/css" id='theme-purple' href="./themes/theme3.css" />
 
 <main>
 	<div class='header'>
@@ -50,17 +35,12 @@
 				<p class='theme-1'>1</p>
 				<p class='theme-2'>2</p>
 				<p class='theme-3'>3</p>
-				<input type=range class="range" min=1 max=3 step="1" list="theme-range"/>
-				<datalist id="theme-range">
-					<option value='1' id="theme-blue" on:click={()=>changeTheme}></option>
-					<option value='2' id="theme-white" on:click={()=>changeTheme}></option>
-					<option value='3' id="theme-purple" on:click={()=>changeTheme}></option>
-				</datalist>
+				<input on:change={changeTheme} type=range class="range" min=1 max=3 step="1" value='1' />
 			</div>
 		</div>
 	</div>
-	<div class='display' >
-		<input type='text' bind:value={display}/>
+	<div class='display'>
+		<input type='text' id='display' bind:value={display}/>
 	</div>
 	<div class='keypad'>
 		<div class='container'>
