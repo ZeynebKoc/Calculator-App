@@ -75,28 +75,28 @@
 		</div>
 	</div>
 	<div class='display'>
-		<input type='text' id='display' bind:value={display}/>
+		<input type='text' bind:value={display}/>
 	</div>
 	<div class='keypad'>
 		<div class='container'>
-			<button class='btn' value='7' on:click={()=>{addDisplay(7)}}><p>7</p></button>
-			<button class='btn' value='8'on:click={()=>{addDisplay(8)}}><p>8</p></button>
-			<button class='btn' value='9' on:click={()=>{addDisplay(9)}}><p>9</p></button>
-			<button class='del' value='DEL' on:click={()=>{deleteNum()}}><p>DEL</p></button>
-			<button class='btn' value='4' on:click={()=>{addDisplay(4)}}><p>4</p></button>
-			<button class='btn' value='5' on:click={()=>{addDisplay(5)}}><p>5</p></button>
-			<button class='btn' value='6' on:click={()=>{addDisplay(6)}}><p>6</p></button>
-			<button class='btn' value='+' on:click={()=>{operationsState('+')}}><p>+</p></button>
-			<button class='btn' value='1' on:click={()=>{addDisplay(1)}}><p>1</p></button>
-			<button class='btn' value='2' on:click={()=>{addDisplay(2)}}><p>2</p></button>
-			<button class='btn' value='3' on:click={()=>{addDisplay(3)}}><p>3</p></button>
-			<button class='btn' value='-' on:click={()=>{operationsState('-')}}><p>-</p></button>
-			<button class='btn' value='.' on:click={()=>{addDisplay('.')}}><p>.</p></button>
-			<button class='btn' value='0' on:click={()=>{addDisplay(0)}}><p>0</p></button>
-			<button class='btn' value='/' on:click={()=>{operationsState('/')}}><p>/</p></button>
-			<button class='btn' value='*' on:click={()=>{operationsState('*')}}><p>&times</p></button>
-			<button class='reset' value='RESET' on:click={()=>{resetDisplay()}}><p>RESET</p></button>
-			<button class='equal' value='=' on:click={()=>{equal('=')}}><p>=</p></button>
+			<button class='btn' value='7' on:click={()=>{addDisplay(7)}}>7</button>
+			<button class='btn' value='8'on:click={()=>{addDisplay(8)}}>8</button>
+			<button class='btn' value='9' on:click={()=>{addDisplay(9)}}>9</button>
+			<button class='del' value='DEL' on:click={()=>{deleteNum()}}>DEL</button>
+			<button class='btn' value='4' on:click={()=>{addDisplay(4)}}>4</button>
+			<button class='btn' value='5' on:click={()=>{addDisplay(5)}}>5</button>
+			<button class='btn' value='6' on:click={()=>{addDisplay(6)}}>6</button>
+			<button class='btn' value='+' on:click={()=>{operationsState('+')}}>+</button>
+			<button class='btn' value='1' on:click={()=>{addDisplay(1)}}>1</button>
+			<button class='btn' value='2' on:click={()=>{addDisplay(2)}}>2</button>
+			<button class='btn' value='3' on:click={()=>{addDisplay(3)}}>3</button>
+			<button class='btn' value='-' on:click={()=>{operationsState('-')}}>-</button>
+			<button class='btn' value='.' on:click={()=>{addDisplay('.')}}>.</button>
+			<button class='btn' value='0' on:click={()=>{addDisplay(0)}}>0</button>
+			<button class='btn' value='/' on:click={()=>{operationsState('/')}}>/</button>
+			<button class='btn' value='*' on:click={()=>{operationsState('*')}}>&times</button>
+			<button class='reset' value='RESET' on:click={()=>{resetDisplay()}}>RESET</button>
+			<button class='equal' value='=' on:click={()=>{equal('=')}}>=</button>
 		</div>
 	</div>
 </main>

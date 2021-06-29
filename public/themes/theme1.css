@@ -172,17 +172,7 @@ input[type=text] {
 	box-shadow: inset 0px -4px 0px #414E73;
 	border-radius: 10px;
 	cursor: pointer;
-}
-.reset:hover {
-	background: #A2B2E1;
-	box-shadow: inset 0px -4px 0px #414E73;
-	border-radius: 10px;
-}
-.reset p {
-	position: relative;
-	left: 75px;
-	top: 1px;
-	
+
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
 	font-weight: bold;
@@ -193,6 +183,12 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
+	padding-left: 75px;
+}
+.reset:hover {
+	background: #A2B2E1;
+	box-shadow: inset 0px -4px 0px #414E73;
+	border-radius: 10px;
 }
 .equal {
 	grid-column-start: 3;
@@ -203,17 +199,7 @@ input[type=text] {
 	box-shadow: inset 0px -4px 0px #93261A;
 	border-radius: 10px;
 	cursor: pointer;
-}
-.equal:hover {
-	background: #F96B5B;
-	box-shadow: inset 0px -4px 0px #93261A;
-	border-radius: 10px;
-}
-.equal p {
-	position: relative;
-	left: 100px;
-	top: 1px;
-	
+
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
 	font-weight: bold;
@@ -224,24 +210,19 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
+	padding-left: 105px;
+}
+.equal:hover {
+	background: #F96B5B;
+	box-shadow: inset 0px -4px 0px #93261A;
+	border-radius: 10px;
 }
 .btn {
 	background: #EAE3DC;
 	box-shadow: inset 0px -4px 0px #B3A497;
 	border-radius: 10px;
 	cursor: pointer;
-}
-.btn:hover {
-	background: #FFFFFE;
-	box-shadow: inset 0px -4px 0px #B3A497;
-	border-radius: 10px;
-}
-.btn p {
-	position: relative;
-	left: 33px;
-	top: -20px;
-	
-	height: 40px;
+
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
 	font-weight: bold;
@@ -252,23 +233,19 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.533333px;
 	color: #434A59;
+	padding-left: 40px;	
+}
+.btn:hover {
+	background: #FFFFFE;
+	box-shadow: inset 0px -4px 0px #B3A497;
+	border-radius: 10px;	
 }
 .del {
 	background: #647198;
 	box-shadow: inset 0px -4px 0px #414E73;
 	border-radius: 10px;
 	cursor: pointer;
-}
-.del:hover {
-	background: #A2B2E1;
-	box-shadow: inset 0px -4px 0px #414E73;
-	border-radius: 10px;
-}
-.del p {
-	position: relative;
-	left: 25px;
-	top: 0px;
-	
+
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
 	font-weight: bold;
@@ -279,4 +256,10 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
+	padding-left: 30px;
+}
+.del:hover {
+	background: #A2B2E1;
+	box-shadow: inset 0px -4px 0px #414E73;
+	border-radius: 10px;
 }

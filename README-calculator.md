@@ -6,7 +6,7 @@
 
 ### Links
 - Solution URL: https://github.com/ZeynebKoc/calculator-app
-- Live Site URL: https://app.netlify.com/sites/confident-shockley-d97288/overview
+- Live Site URL: https://confident-shockley-d97288.netlify.app
 
 
 ### Built with

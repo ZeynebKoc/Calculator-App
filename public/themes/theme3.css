@@ -172,16 +172,6 @@ input[type=text] {
 	box-shadow: inset 0px -4px 0px #BE15F4;
 	border-radius: 10px;
 	cursor: pointer;
-}
-.reset:hover {
-	background: #8631AF;
-	box-shadow: inset 0px -4px 0px #BE15F4;
-	border-radius: 10px;
-}
-.reset p {
-	position: relative;
-	left: 75px;
-	top: 1px;
 
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
@@ -193,6 +183,12 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
+	padding-left: 75px;
+}
+.reset:hover {
+	background: #8631AF;
+	box-shadow: inset 0px -4px 0px #BE15F4;
+	border-radius: 10px;
 }
 .equal {
 	grid-column-start: 3;
@@ -202,16 +198,6 @@ input[type=text] {
 	background: #00DED0;
 	box-shadow: inset 0px -4px 0px #6CF9F1;
 	border-radius: 10px;
-}
-.equal:hover {
-	background: #93FFF8;
-	box-shadow: inset 0px -4px 0px #6CF9F1;
-	border-radius: 10px;
-}
-.equal p {
-	position: relative;
-	left: 100px;
-	top: 1px;
 
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
@@ -223,22 +209,18 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #1A2327;
+	padding-left: 105px;
+}
+.equal:hover {
+	background: #93FFF8;
+	box-shadow: inset 0px -4px 0px #6CF9F1;
+	border-radius: 10px;
 }
 .btn {
 	background: #331C4D;
 	box-shadow: inset 0px -4px 0px #881C9E;
 	border-radius: 10px;
 	cursor: pointer;
-}
-.btn:hover {
-	background: #6C34AC;
-	box-shadow: inset 0px -4px 0px #881C9E;
-	border-radius: 10px;
-}
-.btn p {
-	position: relative;
-	left: 33px;
-	top: -20px;
 
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
@@ -250,22 +232,18 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.533333px;
 	color: #FFE53D;
+	padding-left: 40px;	
+}
+.btn:hover {
+	background: #6C34AC;
+	box-shadow: inset 0px -4px 0px #881C9E;
+	border-radius: 10px;
 }
 .del {
 	background: #56077C;
 	box-shadow: inset 0px -4px 0px #BE15F4;
 	border-radius: 10px;
 	cursor: pointer;
-}
-.del:hover {
-	background: #8631AF;
-	box-shadow: inset 0px -4px 0px #BE15F4;
-	border-radius: 10px;
-}
-.del p {
-	position: relative;
-	left: 25px;
-	top: 0px;
 
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
@@ -277,4 +255,10 @@ input[type=text] {
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
+	padding-left: 30px;
+}
+.del:hover {
+	background: #8631AF;
+	box-shadow: inset 0px -4px 0px #BE15F4;
+	border-radius: 10px;
 }
