@@ -10,9 +10,10 @@ main {
 	width: 540px;
 	height: 44px;
 	left: 450px;
-	top: 81px;
+	top: 74px;
 }
 h1 {
+	position: relative;
 	left: 0px;
 	top: 8px;
 
@@ -31,12 +32,12 @@ h1 {
 	flex-direction: row;
 	height: 44px;
 	width: 144px;
-	left: 396px;
-	top: 0px;
+	left: 401px;
+	top: 5px;
 }
 h2 {
 	position: relative;
-	left: -80px;
+	left: -70px;
 	top: 33px;
 
 	font-family: 'Spartan', sans-serif;
@@ -78,14 +79,12 @@ h2 {
 	height: 44px;
 	width: 71px;
 	left: -52px;
-	top: 5px;
+	top: 7px;
 }
 .theme-1 {
 	position: relative;
-	height: 13px;
-	width: 12px;
-	left: 7px;
-	top: 0px;
+	left: 13px;
+	top: -2px;
 
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
@@ -97,10 +96,8 @@ h2 {
 }
 .theme-2 {
 	position: relative;
-	height: 13px;
-	width: 12px;
-	left: 17px;
-	top: 0px;
+	left: 30px;
+	top: -2px;
 
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
@@ -112,10 +109,8 @@ h2 {
 }
 .theme-3 {
 	position: relative;
-	height: 13px;
-	width: 12px;
-	left: 29px;
-	top: 0px;
+	left: 43px;
+	top: -2px;
 
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
@@ -135,7 +130,8 @@ h2 {
 	border-radius: 10px;	
 }
 .display-text {
-	padding: 32px;
+	padding-right: 32px;
+	padding-top: 38px;
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
 	font-weight: bold;
@@ -180,12 +176,11 @@ h2 {
 	font-size: 20px;
 	line-height: 22px;
 	display: flex;
-	align-items: center;
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
-	padding-left: 75px;
-	padding-top: 5px;
+	padding-left: 83px;
+	padding-top: 20px;
 }
 .reset:hover {
 	background: #A2B2E1;
@@ -208,12 +203,11 @@ h2 {
 	font-size: 20px;
 	line-height: 22px;
 	display: flex;
-	align-items: center;
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
-	padding-left: 105px;
-	padding-top: 5px;
+	padding-left: 107px;
+	padding-top: 20px;
 }
 .equal:hover {
 	background: #F96B5B;
@@ -232,12 +226,11 @@ h2 {
 	font-size: 32px;
 	line-height: 36px;
 	display: flex;
-	align-items: center;
 	text-align: center;
 	letter-spacing: -0.533333px;
 	color: #434A59;
 	padding-left: 40px;	
-	padding-top: 5px;
+	padding-top: 12px;
 }
 .btn:hover {
 	background: #FFFFFE;
@@ -256,12 +249,11 @@ h2 {
 	font-size: 20px;
 	line-height: 22px;
 	display: flex;
-	align-items: center;
 	text-align: center;
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
 	padding-left: 30px;
-	padding-top: 5px;
+	padding-top: 20px;
 }
 .del:hover {
 	background: #A2B2E1;
