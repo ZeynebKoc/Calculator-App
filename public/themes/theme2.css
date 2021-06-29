@@ -259,4 +259,79 @@ h2 {
 	box-shadow: inset 0px -4px 0px #1B6066;
 	border-radius: 10px;
 }
-
+/* mobil theme */
+@media only screen and (max-width:500px) { 
+	main {
+		width: 375px;
+		height: 667px;
+	}
+	.header {
+		width: 327px;
+		height: 44px;
+		left: 24px;
+		top: 2px;
+	}
+	.nav {
+		height: 44px;
+		width: 144px;
+		left: 188px;
+		top: 9px;
+	}
+	.display {
+		height: 88px;
+		width: 327px;
+		left: 24px;
+		top: 104px;
+	}
+	.display-text {
+		padding-top: 26px;
+		padding-right: 24px;
+		font-size: 32px;
+		line-height: 36px;
+		letter-spacing: -0.533333px;
+	}
+	.keypad {
+		width: 327px;
+		height: 420px;
+		left: 24px;
+		top: 216px;
+	}
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4, 60px);
+		grid-template-rows: repeat(5, 64px);
+		grid-gap: 13px 13px;
+		left: 24px;
+		top: 24px;
+	}
+	.reset {
+		font-size: 16px;
+		line-height: 18px;
+		letter-spacing: -0.266667px;
+		padding-left: 41px;
+		border-radius: 5px;
+	}
+	.equal {
+		font-size: 16px;
+		line-height: 18px;
+		letter-spacing: -0.266667px;
+		padding-left: 60px;
+		border-radius: 5px;
+	}
+	.btn {
+		font-size: 28px;
+		line-height: 31px;
+		letter-spacing: -0.466667px;
+		padding-left: 20px;	
+		padding-top: 14px;
+		border-radius: 5px;
+	}
+	.del {
+		font-size: 16px;
+		line-height: 18px;
+		letter-spacing: -0.266667px;
+		padding-left: 15px;
+		padding-top: 20px;
+		border-radius: 5px;
+	}
+}
