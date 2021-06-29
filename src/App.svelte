@@ -70,13 +70,15 @@
 				<p class='theme-1'>1</p>
 				<p class='theme-2'>2</p>
 				<p class='theme-3'>3</p>
-				<input on:change={changeTheme} type=range class="range" min=1 max=3 step="1" value='1' />
+				<input on:change={changeTheme} type="range" class="range" min=1 max=3 step="1" value='1' />
 			</div>
 		</div>
 	</div>
+	
 	<div class='display'>
-		<input type='text' bind:value={display}/>
-	</div>
+		<div class="display-text">{display}</div> 
+	</div> 
+	
 	<div class='keypad'>
 		<div class='container'>
 			<button class='btn' value='7' on:click={()=>{addDisplay(7)}}>7</button>
@@ -100,3 +102,5 @@
 		</div>
 	</div>
 </main>
+
+

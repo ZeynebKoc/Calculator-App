@@ -6,8 +6,8 @@ html, body {
 	padding: 0;
 	vertical-align: baseline;
 	-webkit-line-clamp: inherit;
--webkit-line-clamp: initial;
--webkit-line-clamp: unset;
+	-webkit-line-clamp: initial;
+	-webkit-line-clamp: unset;
 	
 }
 input, button {

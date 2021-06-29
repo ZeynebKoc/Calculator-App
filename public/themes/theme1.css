@@ -125,21 +125,22 @@ h2 {
 	text-align: center;
 	color: #FFFFFF;
 }
-input[type=text] {
+.display {
 	position: absolute;
 	width: 540px;
 	height: 128px;
 	left: 450px;
 	top: 172px;
 	background: #181F33;
-	border-radius: 10px;
-
+	border-radius: 10px;	
+}
+.display-text {
+	padding: 32px;
 	font-family: 'Spartan', sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 48px;
 	line-height: 54px;
-	padding-right: 32px;
 
 	text-align: right;
 	letter-spacing: -0.8px;
@@ -184,6 +185,7 @@ input[type=text] {
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
 	padding-left: 75px;
+	padding-top: 5px;
 }
 .reset:hover {
 	background: #A2B2E1;
@@ -211,6 +213,7 @@ input[type=text] {
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
 	padding-left: 105px;
+	padding-top: 5px;
 }
 .equal:hover {
 	background: #F96B5B;
@@ -234,6 +237,7 @@ input[type=text] {
 	letter-spacing: -0.533333px;
 	color: #434A59;
 	padding-left: 40px;	
+	padding-top: 5px;
 }
 .btn:hover {
 	background: #FFFFFE;
@@ -257,6 +261,7 @@ input[type=text] {
 	letter-spacing: -0.333333px;
 	color: #FFFFFF;
 	padding-left: 30px;
+	padding-top: 5px;
 }
 .del:hover {
 	background: #A2B2E1;
