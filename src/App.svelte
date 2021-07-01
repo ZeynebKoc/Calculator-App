@@ -78,8 +78,6 @@
 	<div class='display'>
 		<div class="display-text">{display}</div> 
 	</div> 
-
-	<p>hhcdcb</p>
 	
 	<div class='keypad'>
 		<div class='container'>
