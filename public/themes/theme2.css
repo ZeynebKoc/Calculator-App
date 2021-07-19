@@ -127,7 +127,9 @@ h2 {
 	left: 450px;
 	top: 172px;
 	background: rgba(238, 238, 238, 1);
-	border-radius: 10px;	
+	border-radius: 10px;
+	
+	overflow: hidden;
 }
 .display-text {
 	padding-right: 32px;

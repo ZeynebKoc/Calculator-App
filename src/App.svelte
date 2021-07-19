@@ -25,32 +25,47 @@
 			equal();
 		}
 	}
+	const dot = () => {
+		if (!display.includes('.')) {
+			addDisplay('.');
+		}
+	}
+	/* const dontAddOprration = () => {
+		if(display == '' || 0) {
+			display = display
+		}
+	} */
 	const operationsState = (operation) => {
 		switch (operation) {
 			case '+':
 				operationEqual();
 				addDisplay('+');
-				result = display + parseFloat(display);
+				dontAddOprration();
+				result = display + parseFloat(display).toFixed(7);
 				break;
 			case '-':
 				operationEqual();
 				addDisplay('-');
-				result = display - parseFloat(display);
+				dontAddOprration();
+				result = display - parseFloat(display).toFixed(7);
 				break;
 			case '/':
 				operationEqual();
 				addDisplay('/');
-				result = display / parseFloat(display);
+				dontAddOprration();
+				result = display / parseFloat(display).toFixed(7);
 				break;
 			case '*':
 				operationEqual();
 				addDisplay('*');
-				result = display * parseFloat(display);
+				dontAddOprration();
+				result = display * parseFloat(display).toFixed(7);
 				break;
 			default:
 				operationEqual();
 				addDisplay();
-				display = parseFloat(display);
+				dontAddOprration();
+				display = parseFloat(display).toFixed(7);
 				break;
 		}
 	}
@@ -76,7 +91,7 @@
 	</div>
 	
 	<div class='display'>
-		<div class="display-text">{display}</div> 
+		<div class="display-text" data-display disabled>{display}</div> 
 	</div> 
 	
 	<div class='keypad'>
@@ -93,7 +108,7 @@
 			<button class='btn' value='2' on:click={()=>{addDisplay(2)}}>2</button>
 			<button class='btn' value='3' on:click={()=>{addDisplay(3)}}>3</button>
 			<button class='btn' value='-' on:click={()=>{operationsState('-')}}>-</button>
-			<button class='btn' value='.' on:click={()=>{addDisplay('.')}}>.</button>
+			<button class='btn' value='.' on:click={()=>{dot('.')}}>.</button>
 			<button class='btn' value='0' on:click={()=>{addDisplay(0)}}>0</button>
 			<button class='btn' value='/' on:click={()=>{operationsState('/')}}>/</button>
 			<button class='btn' value='*' on:click={()=>{operationsState('*')}}>&times</button>
