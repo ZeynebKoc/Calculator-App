@@ -1,74 +1,70 @@
 <script>
 	let display = 0;
-	let result = 0;
+	let firstOperand = null;
+	let secondOperand = false;
+	let operator = null;
+	let operatorClicked = false;
 
 	const addDisplay = (num) => {
-		if(display == 0){
-			display='';
+		if(display === 0 || operatorClicked ) {
+			display = '';	
 		}
-		display += String(num);
-	} 
+		if(display.length <= 13){
+			display += String(num);	
+		}
+		operatorClicked = false;
+	}
+
+	const dot = () => {
+		if(display == 0) {
+			display = '0.';
+		}else if(!display.includes('.')){
+			display += '.';
+		}	
+	}
+
 	const resetDisplay = () => {
-		display = '';
+		display = 0;
 	}
+
 	const deleteNum = () => {
-		display = display.slice(0, -1);
-	}
+		display = String(display);
+		if(display.length <= 1) { 
+			display = 0;
+		}else if (display == /.$/) {
+			display = display.slice(0, -2); 
+		}else{
+			display = display.slice(0, -1);
+		}	
+	}	
+	
 	const equal = () => {
-		var exp = display;
-		if (exp){
-			display=eval(display);
+		//debugger;
+		secondOperand = Number(display)
+		if(operator === '+'){
+		 	display = firstOperand + secondOperand;
+			display = display.toFixed(7).replace(/0+$/, '');
+		}else if(operator === '-'){
+		 	display =  firstOperand - secondOperand;
+			display = display.toFixed(7).replace(/0+$/, '');
+		}else if(operator === '*'){
+		 	display =  firstOperand * secondOperand;
+			display = display.toFixed(7).replace(/0+$/, '');
+		}else if(operator === '/'){
+		 	display =  firstOperand / secondOperand;
+			display = display.toFixed(7).replace(/0+$/, '');
 		}
-	}
-	const operationEqual = ()=> {
-		if('+' || '-' || '/' || '*') {
+	} 
+
+	const operationsState = (operation) => {
+		if(secondOperand, operatorClicked = true){
 			equal();
 		}
+		operatorClicked = true;
+		firstOperand = Number(display);
+		operator = operation;
 	}
-	const dot = () => {
-		if (!display.includes('.')) {
-			addDisplay('.');
-		}
-	}
-	/* const dontAddOprration = () => {
-		if(display == '' || 0) {
-			display = display
-		}
-	} */
-	const operationsState = (operation) => {
-		switch (operation) {
-			case '+':
-				operationEqual();
-				addDisplay('+');
-				dontAddOprration();
-				result = display + parseFloat(display).toFixed(7);
-				break;
-			case '-':
-				operationEqual();
-				addDisplay('-');
-				dontAddOprration();
-				result = display - parseFloat(display).toFixed(7);
-				break;
-			case '/':
-				operationEqual();
-				addDisplay('/');
-				dontAddOprration();
-				result = display / parseFloat(display).toFixed(7);
-				break;
-			case '*':
-				operationEqual();
-				addDisplay('*');
-				dontAddOprration();
-				result = display * parseFloat(display).toFixed(7);
-				break;
-			default:
-				operationEqual();
-				addDisplay();
-				dontAddOprration();
-				display = parseFloat(display).toFixed(7);
-				break;
-		}
-	}
+	
 	//switch theme
 	const changeTheme = (e) => {
 		let oldlink = document.getElementsByTagName("link")[0];
@@ -90,8 +86,8 @@
 		</div>
 	</div>
 	
-	<div class='display'>
-		<div class="display-text" data-display disabled>{display}</div> 
+	<div class='display' data-test-id="display" >
+		<div class="display-text" disabled>{display}</div> 
 	</div> 
 	
 	<div class='keypad'>
@@ -108,14 +104,12 @@
 			<button class='btn' value='2' on:click={()=>{addDisplay(2)}}>2</button>
 			<button class='btn' value='3' on:click={()=>{addDisplay(3)}}>3</button>
 			<button class='btn' value='-' on:click={()=>{operationsState('-')}}>-</button>
-			<button class='btn' value='.' on:click={()=>{dot('.')}}>.</button>
+			<button class='btn' value='.' on:click={()=>{dot()}}>.</button>
 			<button class='btn' value='0' on:click={()=>{addDisplay(0)}}>0</button>
 			<button class='btn' value='/' on:click={()=>{operationsState('/')}}>/</button>
 			<button class='btn' value='*' on:click={()=>{operationsState('*')}}>&times</button>
 			<button class='reset' value='RESET' on:click={()=>{resetDisplay()}}>RESET</button>
-			<button class='equal' value='=' on:click={()=>{equal('=')}}>=</button>
+			<button class='equal' value='=' on:click={()=> equal()}>=</button>
 		</div>
 	</div>
 </main>
-
-
