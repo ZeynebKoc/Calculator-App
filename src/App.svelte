@@ -27,6 +27,7 @@
     //should be display value 0
     const resetDisplay = () => {
         display = 0;
+        secondOperand = false;
     };
 
     const deleteNum = () => {
